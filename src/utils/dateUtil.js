@@ -4,7 +4,7 @@ export const getCurrentBrowserTime = (timezone = null,passedDate=null) => {
 
     if(passedDate) browserTime = new Date(passedDate);
 
-    return {year : browserTime.getFullYear().toString() ,month : months[browserTime.getMonth()], day : formatDateValues(browserTime.getDay().toString()),hour : formatDateValues(browserTime.getHours().toString()),minute: formatDateValues(browserTime.getMinutes().toString()),seconds: formatDateValues(browserTime.getSeconds().toString()) }
+    return {year : browserTime.getFullYear().toString() ,month : months[browserTime.getMonth()], day : formatDateValues(browserTime.getDate().toString()),hour : formatDateValues(browserTime.getHours().toString()),minute: formatDateValues(browserTime.getMinutes().toString()),seconds: formatDateValues(browserTime.getSeconds().toString()) }
 
 }
 
