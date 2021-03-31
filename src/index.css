@@ -1,0 +1,10 @@
+html,body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif !important;
+  background-color: black !important;
+  color: whitesmoke !important;
+}
+
+.headerDarkColor { 
+  background-color: #1b1818 !important;
+}

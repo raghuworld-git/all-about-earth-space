@@ -1,0 +1,9 @@
+.imgfluid {
+  width: 100% !important;
+  max-height: 400px !important;
+  object-fit: cover !important;
+}
+
+.pointer{
+  cursor: pointer;
+}
