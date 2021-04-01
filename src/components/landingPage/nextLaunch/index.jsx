@@ -3,6 +3,7 @@ import { MDBBadge, MDBBox, MDBIcon, MDBMask, MDBTypography, MDBView } from "mdbr
 import { useHistory } from "react-router-dom";
 
 import styles from "./index.module.css";
+import DefaultImage from '../../../assests/images/default.jpg'
 
 import LaunchCounter from '../../launchCounter';
 
@@ -10,8 +11,9 @@ const Index = ({ launchInfo }) => {
   const history = useHistory();
 
 
-  const { name, agency, location, fromattedNet, originalNet, slug, statusFull, statusFullColor } = launchInfo[0];
+  const { name, image, agency, location, fromattedNet, originalNet, slug, statusFull, statusFullColor } = launchInfo[0];
 
+  const finalImage = image ? image : DefaultImage;
   return (
     <MDBView
       rounded
@@ -19,7 +21,7 @@ const Index = ({ launchInfo }) => {
       onClick={() => history.push(`/launch/${slug}`)}
     >
       <img
-        src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/soyuz_2.1a_image_20201013143850.jpg"
+        src={finalImage}
         className={styles.imgfluid}
         alt=""
       />

@@ -7,12 +7,12 @@ const CurrentBrowserTime = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCurrentTime(getCurrentBrowserTime());    
+      setCurrentTime(getCurrentBrowserTime());
     }, interval);
     return () => clearTimeout(timer);
   });
 
-  return <> {currentTime.month} {currentTime.day} {currentTime.year}, {currentTime.hour}:{currentTime.minute} {Intl.DateTimeFormat().resolvedOptions().timeZone} </>;
+  return <> {currentTime.month} {currentTime.day} {currentTime.year}, {currentTime.hour}:{currentTime.minute} {Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).resolvedOptions().timeZone} </>;
 };
 
 export default CurrentBrowserTime;
