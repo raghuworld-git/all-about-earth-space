@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { getCurrentBrowserTime } from "../../utils/dateUtil";
 
 const CurrentBrowserTime = () => {
   const interval = 1000;
-  const [currentTime, setCurrentTime] = useState(getCurrentBrowserTime());
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCurrentTime(getCurrentBrowserTime());
+      setCurrentTime(new Date());
     }, interval);
     return () => clearTimeout(timer);
   });
 
-  return <> {currentTime.month} {currentTime.day} {currentTime.year}, {currentTime.hour}:{currentTime.minute} {Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).resolvedOptions().timeZone} </>;
+  return <> {currentTime.toString()}</>;
 };
 
 export default CurrentBrowserTime;

@@ -7,6 +7,7 @@ import UpcomingLaunches from "./upcomingLaunches";
 
 import { getTopFiveUpcmomingLaunches } from '../../api/launchAPI';
 import { getFormattedTop5UpcomingList } from '../../utils/launchUtil';
+import Loader from "../status/Loader";
 
 
 const LandingPage = () => {
@@ -14,7 +15,7 @@ const LandingPage = () => {
   const { status, data } = useQuery('getTopFiveUpcmomingLaunches', getTopFiveUpcmomingLaunches);
 
   if (status === 'loading') {
-    return 'Loading...'
+    return <Loader />
   }
   if (status === 'error') {
     return 'An Error occured.. please try later'

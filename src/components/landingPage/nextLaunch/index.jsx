@@ -27,7 +27,7 @@ const Index = ({ launchInfo }) => {
       />
       <MDBMask
         className="d-flex flex-column align-items-center justify-content-center"
-        overlay="black-slight"
+        overlay="black-light"
       >
         <MDBTypography tag="h5" variant="h5-responsive">
           <MDBBadge color={statusFullColor}>{statusFull}</MDBBadge>

@@ -22,22 +22,19 @@ const HeaderNav = () => {
       <header>
         <MDBNavbar className='headerDarkColor' dark expand="md">
           <MDBNavbarBrand href="/">
-            <strong>Navbar</strong>
+            <strong>All About Space</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={onClick} />
           <MDBCollapse isOpen={collapse} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="#">Home</MDBNavLink>
+              <MDBNavItem>
+                <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#">Features</MDBNavLink>
+                <MDBNavLink to="/launches/upcoming">Launches</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#">Pricing</MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink to="#">Opinions</MDBNavLink>
+                <MDBNavLink to="/astronauts/">Astronauts</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
             <MDBNavbarNav right>
