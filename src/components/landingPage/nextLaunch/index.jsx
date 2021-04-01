@@ -41,10 +41,10 @@ const Index = ({ launchInfo }) => {
           <MDBIcon icon="calendar-day" /> &nbsp;
           {fromattedNet}
         </MDBBox>
-        <MDBBox tag="p" className="h6">
+        <MDBBox tag="p" className="h6" mt='2'>
           <MDBIcon icon="map-marker-alt" /> &nbsp; {location}
         </MDBBox>
-        <MDBBox tag="p" className="h6">
+        <MDBBox tag="p" className="h6" mt='2'>
           Agency : {agency}
         </MDBBox>
 
