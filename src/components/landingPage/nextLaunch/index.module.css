@@ -7,3 +7,10 @@
 .pointer{
   cursor: pointer;
 }
+
+@media screen and (max-width:600px){
+  .truncateOnWidth {
+    max-width: 330px;
+  }
+  
+}
