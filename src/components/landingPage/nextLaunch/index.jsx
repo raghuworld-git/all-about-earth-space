@@ -1,6 +1,6 @@
 import React from "react";
-import { MDBBadge, MDBBox, MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBCardTitle, MDBCol, MDBIcon, MDBMask, MDBRow, MDBTypography, MDBView } from "mdbreact";
-import { useHistory } from "react-router-dom";
+import { MDBBadge, MDBBox, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBIcon, MDBRow, MDBTypography } from "mdbreact";
+
 
 import styles from "./index.module.css";
 import DefaultImage from '../../../assests/images/default.jpg'
@@ -8,10 +8,10 @@ import DefaultImage from '../../../assests/images/default.jpg'
 import LaunchCounter from '../../launchCounter';
 
 const Index = ({ launchInfo }) => {
-  const history = useHistory();
+  // const history = useHistory();
 
 
-  const { name, image, agency, location, fromattedNet, originalNet, slug, statusFull, statusFullColor } = launchInfo[0];
+  const { name, image, agency, location, fromattedNet, originalNet, statusFull, statusFullColor } = launchInfo[0];
 
   const finalImage = image ? image : DefaultImage;
 
