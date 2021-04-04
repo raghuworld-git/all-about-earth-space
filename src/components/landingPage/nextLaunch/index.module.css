@@ -1,16 +1,27 @@
 .imgfluid {
   width: 100% !important;
-  max-height: 400px !important;
+  height: 400px !important;
   object-fit: cover !important;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.cardBorderRadius{
+border-radius: 9px;
 }
 
 .pointer{
   cursor: pointer;
 }
 
-@media screen and (max-width:600px){
-  .truncateOnWidth {
-    max-width: 330px;
+@media screen and (max-width:780px){
+
+  .imgfluid{
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
   }
   
 }

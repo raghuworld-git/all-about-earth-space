@@ -28,7 +28,7 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
             {renderLaunches}
 
             <MDBListGroupItem className={`headerDarkColor ${styles.upcomingItem} text-center`} hover>
-                <Link to='/launch/upcoming'>
+                <Link to='/launches/upcoming'>
                     <p className="mb-1">For more upcoming launches &nbsp; <MDBIcon icon="arrow-right" /></p>
                 </Link>
             </MDBListGroupItem>

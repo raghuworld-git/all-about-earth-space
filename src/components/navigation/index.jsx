@@ -1,5 +1,9 @@
 import {
   MDBCollapse,
+  MDBDropdown,
+  MDBDropdownItem,
+  MDBDropdownMenu,
+  MDBDropdownToggle,
   MDBIcon,
   MDBNavbar,
   MDBNavbarBrand,
@@ -9,6 +13,7 @@ import {
   MDBNavLink,
 } from "mdbreact";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const HeaderNav = () => {
   const [collapse, setCollapse] = useState(false);
@@ -20,7 +25,7 @@ const HeaderNav = () => {
   return (
     <>
       <header>
-        <MDBNavbar className='headerDarkColor' dark expand="md">
+        <MDBNavbar className='greyColor' dark expand="md">
           <MDBNavbarBrand href="/">
             <strong>AASE</strong>
           </MDBNavbarBrand>
@@ -31,7 +36,15 @@ const HeaderNav = () => {
                 <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/launches/upcoming">Launches</MDBNavLink>
+                <MDBDropdown>
+                  <MDBDropdownToggle nav caret>
+                    <div className="d-none d-md-inline">Launches</div>
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu className="dropdown-default">
+                    <Link className="dropdown-item" to="/launches/upcoming">Upcoming</Link>
+                    <Link className="dropdown-item" to="/launches/previous">Previous</Link>
+                  </MDBDropdownMenu>
+                </MDBDropdown>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="/astronauts/">Astronauts</MDBNavLink>

@@ -1,11 +1,11 @@
 html,body {
   margin: 0;
   font-family: 'Rubik', sans-serif !important;
-  background-color:#1b1818 !important;
+  background-color:#121212 !important;
   color: whitesmoke !important;
 }
 
-.headerDarkColor { 
-  background-color: black !important;  
-  /* // #1b1818 */
+.greyColor { 
+  background-color: #1e1e1e !important;  
+
 }
