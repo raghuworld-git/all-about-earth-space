@@ -1,7 +1,7 @@
 import {
   MDBCollapse,
   MDBDropdown,
-  MDBDropdownItem,
+
   MDBDropdownMenu,
   MDBDropdownToggle,
   MDBIcon,
