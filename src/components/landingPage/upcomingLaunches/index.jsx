@@ -8,7 +8,8 @@ import {
 } from "mdbreact";
 
 import styles from "./index.module.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import defaultImage from '../../../assests/images/stars.jpg';
 
 const UpcomingLaunches = ({ upcomingLaunchs }) => {
   // const renderLaunches = upcomingLaunchs.length > 0 ? upcomingLaunchs.map(({ id, slug, name, fromattedNet, shortStatusColor, shortStatus }) => {
@@ -33,13 +34,24 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
         ({ id, slug, name, fromattedNet, shortStatusColor, shortStatus }) => {
           return (
             <MDBCol key={id} sm="4" xs="12" md="4">
-              <MDBCard className={`greyColor my-1`} border="grey">
-                <MDBCardBody>
-                  <small>{name}</small> 
-                  <span style={{color:`${shortStatusColor}`}}>{shortStatus}</span>
-                  {fromattedNet}
-                </MDBCardBody>
-              </MDBCard>
+              <Link to={`/launch/${slug}`}>
+                <MDBCard className={`greyColor my-1`} border="grey" style={{
+            backgroundImage:
+              `url('${defaultImage}')`
+          }}>
+                  <MDBCardBody
+                    className={`d-flex flex-column rgba-black-strong ${styles.upcomingCardBody}`}
+                  >
+                    <span className="d-inline-block text-truncate" title={name}>
+                      {name}
+                    </span>
+                    <span style={{ color: `${shortStatusColor}` }}>
+                      {shortStatus}
+                    </span>
+                    {fromattedNet}
+                  </MDBCardBody>                  
+                </MDBCard>
+              </Link>
             </MDBCol>
           );
         }

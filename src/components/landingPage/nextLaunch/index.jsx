@@ -70,7 +70,7 @@ const Index = ({ launchInfo }) => {
                 <MDBIcon icon="map-marker-alt" /> &nbsp; {location}
               </p>
               <p className="text-center">Agency : {agency}</p>
-              <MDBBtn outline color="info" size='sm'>View details</MDBBtn>
+              <MDBBtn  color="light-blue" size='sm'>View details</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
