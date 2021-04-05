@@ -42,7 +42,7 @@ const Index = ({ launchInfo }) => {
             <MDBCardImage
               waves={false}
               alt={name}
-              className={`${styles.imgfluid}`}
+              className={`${styles.imgfluid} ${styles.cardBorderRadius}`}
               src={finalImage}
             />
           </MDBCard>

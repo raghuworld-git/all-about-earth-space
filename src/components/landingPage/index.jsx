@@ -33,8 +33,7 @@ const LandingPage = () => {
           <MDBCol>
             <MDBTypography
               tag="h5"
-              variant="h5-responsive"
-              className="text-center"
+              variant="h5-responsive"           
             >
               Next Launch is
             </MDBTypography>
@@ -47,11 +46,11 @@ const LandingPage = () => {
           <MDBCol xs="12" sm="12" md="8" xl="8">
             <MDBTypography
               tag="h5"
-              variant="h5-responsive"
-              className="text-center"
+              variant="h5-responsive"            
             >
               Upcoming Launches
             </MDBTypography>
+          
             <UpcomingLaunches upcomingLaunchs={upcomingLaunch}/>
           </MDBCol>
           <MDBCol xs="12" sm="12" md="4" xl="4"></MDBCol>
