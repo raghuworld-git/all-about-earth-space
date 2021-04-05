@@ -7,6 +7,7 @@ import {
   MDBCol,
   MDBIcon,
   MDBRow,
+  MDBBtn
 } from "mdbreact";
 
 import styles from "./index.module.css";
@@ -38,35 +39,38 @@ const Index = ({ launchInfo }) => {
             className={`${styles.cardBorderRadius} greyColor`}
             border="grey"
           >
-            <MDBCardImage waves={false} alt={name}
+            <MDBCardImage
+              waves={false}
+              alt={name}
               className={`${styles.imgfluid}`}
-              src={
-                finalImage
-              }
+              src={finalImage}
             />
           </MDBCard>
         </MDBCol>
         <MDBCol xs="12" sm="12" md="4" xl="4">
           <MDBCard
-            className={`${styles.cardBorderRadius} greyColor`}
+            className={`${styles.cardBorderRadius} ${styles.infoCard} greyColor`}
             border="grey"
           >
-            <MDBCardBody className={`d-flex flex-column align-items-center justify-content-center ${styles.cardBody}`}>
+            <MDBCardBody
+              className={`d-flex flex-column align-items-center justify-content-center ${styles.cardBody}`}
+            >
+              <p className="text-center">{name}</p>
               <h4>
                 <LaunchCounter launchDate={originalNet} />
               </h4>
-              <p>
-                <MDBBadge color={statusFullColor}>{statusFull}</MDBBadge>
-              </p>
-              <p className='text-center'>{name}</p>
               <p>
                 <MDBIcon icon="calendar-day" /> &nbsp;
                 {fromattedNet}
               </p>
               <p>
+                <MDBBadge color={statusFullColor}>{statusFull}</MDBBadge>
+              </p>
+              <p className="text-center">
                 <MDBIcon icon="map-marker-alt" /> &nbsp; {location}
               </p>
-              <p>Agency : {agency}</p>
+              <p className="text-center">Agency : {agency}</p>
+              <MDBBtn outline color="info" size='sm'>View details</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
