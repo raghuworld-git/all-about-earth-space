@@ -1,22 +1,77 @@
 import React from "react";
-import { MDBBadge, MDBBox, MDBCard, MDBCardBody, MDBCardImage, MDBCol, MDBIcon, MDBRow, MDBTypography } from "mdbreact";
-
+import {
+  MDBBadge,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCol,
+  MDBIcon,
+  MDBRow,
+} from "mdbreact";
 
 import styles from "./index.module.css";
-import DefaultImage from '../../../assests/images/default.jpg'
+import DefaultImage from "../../../assests/images/default.jpg";
 
-import LaunchCounter from '../../launchCounter';
+import LaunchCounter from "../../launchCounter";
 
 const Index = ({ launchInfo }) => {
   // const history = useHistory();
 
-
-  const { name, image, agency, location, fromattedNet, originalNet, statusFull, statusFullColor } = launchInfo[0];
+  const {
+    name,
+    image,
+    agency,
+    location,
+    fromattedNet,
+    originalNet,
+    statusFull,
+    statusFullColor,
+  } = launchInfo[0];
 
   const finalImage = image ? image : DefaultImage;
 
-  return (<>
-    <MDBCard className={`${styles.cardBorderRadius} greyColor`}>
+  return (
+    <>
+      <MDBRow>
+        <MDBCol xs="12" sm="12" md="8" xl="8">
+          <MDBCard
+            className={`${styles.cardBorderRadius} greyColor`}
+            border="grey"
+          >
+            <MDBCardImage waves={false} alt={name}
+              className={`${styles.imgfluid}`}
+              src={
+                finalImage
+              }
+            />
+          </MDBCard>
+        </MDBCol>
+        <MDBCol xs="12" sm="12" md="4" xl="4">
+          <MDBCard
+            className={`${styles.cardBorderRadius} greyColor`}
+            border="grey"
+          >
+            <MDBCardBody className={`d-flex flex-column align-items-center justify-content-center ${styles.cardBody}`}>
+              <h4>
+                <LaunchCounter launchDate={originalNet} />
+              </h4>
+              <p>
+                <MDBBadge color={statusFullColor}>{statusFull}</MDBBadge>
+              </p>
+              <p className='text-center'>{name}</p>
+              <p>
+                <MDBIcon icon="calendar-day" /> &nbsp;
+                {fromattedNet}
+              </p>
+              <p>
+                <MDBIcon icon="map-marker-alt" /> &nbsp; {location}
+              </p>
+              <p>Agency : {agency}</p>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+      {/* <MDBCard className={`${styles.cardBorderRadius} greyColor`} border='grey'>
       <MDBRow className='no-gutters'>
         <MDBCol md='5' xl='5' sm='12' xs='12'>
           <MDBCardImage src={finalImage} className={styles.imgfluid} />
@@ -45,8 +100,9 @@ const Index = ({ launchInfo }) => {
           </MDBCardBody>
         </MDBCol>
       </MDBRow>
-    </MDBCard>
-  </>);
+    </MDBCard> */}
+    </>
+  );
   // return (
   //   <MDBView
   //     rounded

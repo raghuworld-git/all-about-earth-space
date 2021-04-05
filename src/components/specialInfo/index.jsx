@@ -7,7 +7,7 @@ const SpecialInfo = () => {
   return (
     <>
       <MDBContainer fluid>
-        <MDBRow className="headerDarkColor">
+        <MDBRow className="greyColor">
           <MDBCol>
             <section className="float-right my-2">
               <CurrentBrowserTime />
