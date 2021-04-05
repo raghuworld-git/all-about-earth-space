@@ -25,7 +25,7 @@ const HeaderNav = () => {
   return (
     <>
       <header>
-        <MDBNavbar className='greyColor' dark expand="md">
+        <MDBNavbar style={{backgroundColor:'#313131'}} dark expand="md">
           <MDBNavbarBrand href="/">
             <strong>AASE</strong>
           </MDBNavbarBrand>

@@ -9,7 +9,7 @@ import {
 
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
-import defaultImage from '../../../assests/images/stars.jpg';
+import defaultImage from "../../../assests/images/stars.jpg";
 
 const UpcomingLaunches = ({ upcomingLaunchs }) => {
   // const renderLaunches = upcomingLaunchs.length > 0 ? upcomingLaunchs.map(({ id, slug, name, fromattedNet, shortStatusColor, shortStatus }) => {
@@ -31,14 +31,31 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
   const renderLaunches =
     upcomingLaunchs.length > 0 ? (
       upcomingLaunchs.map(
-        ({ id, slug, name, fromattedNet, shortStatusColor, shortStatus }) => {
+        ({
+          id,
+          slug,
+          name,
+          image,
+          fromattedNet,
+          shortStatusColor,
+          shortStatus,
+          agency
+        }) => {
+
+          const imgUrl = image===null ? defaultImage : image; 
           return (
             <MDBCol key={id} sm="4" xs="12" md="4">
               <Link to={`/launch/${slug}`}>
-                <MDBCard className={`greyColor my-1`} border="grey" style={{
-            backgroundImage:
-              `url('${defaultImage}')`
-          }}>
+                <MDBCard
+                  className={`greyColor my-1`}
+                  border="grey"
+                  style={{
+                    backgroundImage: `url('${imgUrl}')`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                >
                   <MDBCardBody
                     className={`d-flex flex-column rgba-black-strong ${styles.upcomingCardBody}`}
                   >
@@ -49,7 +66,10 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
                       {shortStatus}
                     </span>
                     {fromattedNet}
-                  </MDBCardBody>                  
+                    <small className='mt-1'>
+                      {agency}
+                    </small>
+                  </MDBCardBody>
                 </MDBCard>
               </Link>
             </MDBCol>

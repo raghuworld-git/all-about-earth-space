@@ -31,7 +31,7 @@ export const getTopFiveUpcmomingLaunches = async () => {
 export const getLaunchBySlug = async (slug) => {
     try {
         const res = await launchAPI.get(`/?slug=${slug}&mode=detailed`);
-        return res.data
+        return res.data.results
     }
     catch (error) {
         throw error;
