@@ -8,6 +8,7 @@ import { getFormattedTop5UpcomingList } from '../../utils/launchUtil';
 import DefaultImage from "../../assests/images/default.jpg";
 import LaunchImageCard from '../landingPage/nextLaunch/LaunchImageCard';
 import LaunchBasicInfoCard from '../landingPage/nextLaunch/LaunchBasicInfoCard';
+import TitleComponent from '../title/TitleComponent';
 
 const Launch = () => {
   const { slug } = useParams();
@@ -34,27 +35,30 @@ const Launch = () => {
 
   const finalImage = image ? image : DefaultImage;
   return (
-    <MDBContainer className="mt-3">
-      <MDBRow>
-        <MDBCol>
-          <MDBTypography
-            tag="h5"
-            variant="h5-responsive"
-          >
-            {name}
-          </MDBTypography>
+    <>
+      <TitleComponent title={name} />
+      <MDBContainer className="mt-3">
+        <MDBRow>
+          <MDBCol>
+            <MDBTypography
+              tag="h5"
+              variant="h5-responsive"
+            >
+              {name}
+            </MDBTypography>
 
-        </MDBCol>
-      </MDBRow>
-      <MDBRow>
-        <MDBCol xs="12" sm="12" md="8" xl="8">
-          <LaunchImageCard name={name} finalImage={finalImage} />
-        </MDBCol>
-        <MDBCol xs="12" sm="12" md="4" xl="4">
-          <LaunchBasicInfoCard name={name} originalNet={originalNet} fromattedNet={fromattedNet} statusFull={statusFull} statusFullColor={statusFullColor} location={location} agency={agency} slug={slug} />
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
+          </MDBCol>
+        </MDBRow>
+        <MDBRow>
+          <MDBCol xs="12" sm="12" md="8" xl="8">
+            <LaunchImageCard name={name} finalImage={finalImage} />
+          </MDBCol>
+          <MDBCol xs="12" sm="12" md="4" xl="4">
+            <LaunchBasicInfoCard name={name} originalNet={originalNet} fromattedNet={fromattedNet} statusFull={statusFull} statusFullColor={statusFullColor} location={location} agency={agency} slug={slug} />
+          </MDBCol>
+        </MDBRow>
+      </MDBContainer>
+    </>
   )
 }
 

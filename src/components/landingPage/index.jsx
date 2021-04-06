@@ -8,6 +8,7 @@ import UpcomingLaunches from "./upcomingLaunches";
 import { getTopFiveUpcmomingLaunches } from "../../api/launchAPI";
 import { getFormattedTop5UpcomingList } from "../../utils/launchUtil";
 import Loader from "../status/Loader";
+import TitleComponent from '../title/TitleComponent';
 
 const LandingPage = () => {
   const { status, data } = useQuery(
@@ -28,6 +29,7 @@ const LandingPage = () => {
 
   return (
     <>
+      <TitleComponent title='Home' />
       <MDBContainer className="mt-3">
         <MDBRow>
           <MDBCol>
