@@ -20,7 +20,7 @@ export const getnextLaunch = async () => {
 
 export const getTopFiveUpcmomingLaunches = async () => {
     try {
-        const resp = await upcomingLaunchAPI.get(`/?limit=4`);
+        const resp = await upcomingLaunchAPI.get(`/?limit=5`);
         return resp.data?.results;
     }
     catch (error) {

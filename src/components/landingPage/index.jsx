@@ -22,36 +22,37 @@ const LandingPage = () => {
     return "An Error occured.. please try later";
   }
 
-  const { nextlaunch,upcomingLaunch } = getFormattedTop5UpcomingList(data); //{ nextlaunch, upcomingLaunch }
+  const { nextlaunch, upcomingLaunch } = getFormattedTop5UpcomingList(data); //{ nextlaunch, upcomingLaunch }
 
   //console.log(fordate)
 
   return (
     <>
-      <MDBContainer className="mt-2">
+      <MDBContainer className="mt-3">
         <MDBRow>
           <MDBCol>
             <MDBTypography
               tag="h5"
-              variant="h5-responsive"           
+              variant="h5-responsive"
             >
               Next Launch is
             </MDBTypography>
+
           </MDBCol>
         </MDBRow>
 
         <NextLaunch launchInfo={nextlaunch} />
 
-        <MDBRow className='mt-2'>
+        <MDBRow className='mt-3'>
           <MDBCol xs="12" sm="12" md="8" xl="8">
             <MDBTypography
               tag="h5"
-              variant="h5-responsive"            
+              variant="h5-responsive"
             >
               Upcoming Launches
             </MDBTypography>
-          
-            <UpcomingLaunches upcomingLaunchs={upcomingLaunch}/>
+
+            <UpcomingLaunches upcomingLaunchs={upcomingLaunch} />
           </MDBCol>
           <MDBCol xs="12" sm="12" md="4" xl="4"></MDBCol>
         </MDBRow>
