@@ -46,7 +46,7 @@ const LandingPage = () => {
         <NextLaunch launchInfo={nextlaunch} />
 
         <MDBRow className='mt-3'>
-          <MDBCol xs="12" sm="12" md="8" xl="8">
+          <MDBCol xs="12" sm="12" md="12" xl="12">
             <MDBTypography
               tag="h5"
               variant="h5-responsive"
@@ -56,7 +56,7 @@ const LandingPage = () => {
 
             <UpcomingLaunches upcomingLaunchs={upcomingLaunch} />
           </MDBCol>
-          <MDBCol xs="12" sm="12" md="4" xl="4"></MDBCol>
+          {/* <MDBCol xs="12" sm="12" md="4" xl="4"></MDBCol> */}
         </MDBRow>
       </MDBContainer>
     </>

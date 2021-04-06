@@ -4,9 +4,7 @@
   object-fit: cover !important;
 }
 
-.cardBorderRadius{
-border-radius: 9px;
-}
+
 
 .pointer{
   cursor: pointer;

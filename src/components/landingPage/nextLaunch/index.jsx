@@ -33,7 +33,7 @@ const Index = ({ launchInfo }) => {
           <LaunchImageCard name={name} finalImage={finalImage} />
         </MDBCol>
         <MDBCol xs="12" sm="12" md="4" xl="4">
-          <LaunchBasicInfoCard name={name} originalNet={originalNet} fromattedNet={fromattedNet} statusFull={statusFull} statusFullColor={statusFullColor} location={location} agency={agency} slug={slug} showLink />
+          <LaunchBasicInfoCard name={name} originalNet={originalNet} fromattedNet={fromattedNet} statusFull={statusFull} statusFullColor={statusFullColor} location={location} agency={agency} slug={slug} />
         </MDBCol>
       </MDBRow>
     </>

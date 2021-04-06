@@ -9,3 +9,7 @@ html,body {
   background-color: #1e1e1e !important;  
 
 }
+
+.cardBorderRadius{
+  border-radius: 9px;
+  }

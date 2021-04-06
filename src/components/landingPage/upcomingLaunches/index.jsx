@@ -44,7 +44,7 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
 
           const imgUrl = image === null ? defaultImage : image;
           return (
-            <MDBCol key={id} sm="6" xs="12" md="6">
+            <MDBCol key={id} sm="4" xs="12" md="4">
               <Link to={`/launch/${slug}`}>
                 <MDBCard
                   className={`greyColor my-1`}

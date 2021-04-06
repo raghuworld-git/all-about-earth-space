@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 const LaunchImageCard = ({ name, finalImage }) => {
     return (
         <MDBCard
-            className={`${styles.cardBorderRadius} greyColor`}
+            className='cardBorderRadius greyColor'
             border="grey"
         >
             <MDBCardImage

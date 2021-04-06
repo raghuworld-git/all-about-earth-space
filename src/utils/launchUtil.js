@@ -28,11 +28,11 @@ export const getFormattedTop5UpcomingList = (data = []) => {
     let response = { nextlaunch: [], upcomingLaunch: [] };
     if (!data) return response;
     let dataArray = data.map((item) => {
-        const { name, net, id, slug, status, launch_service_provider, pad, image } = item;
+        const { name, net, id, slug, status, launch_service_provider, pad, image ,rocket} = item;
         const { year, month, day, hour, minutes, seconds } = getFullFormattedDateTime(net);
         const fromattedNet = `${month} ${day} ${year}, ${hour}:${minutes}:${seconds}`;
         const statusColors = getColorByLaunchStatus(status.abbrev);
-        return { name, image, id, slug, location: pad.location?.name, agency: launch_service_provider.name, statusFull: `${status.name} (${status.abbrev})`, statusFullColor: statusColors[0], shortStatus: status.abbrev, shortStatusColor: statusColors[1], fromattedNet, originalNet: net }
+        return { name, image, id, slug, location: pad.location?.name, agency: launch_service_provider.name, statusFull: `${status.name} (${status.abbrev})`, statusFullColor: statusColors[0], shortStatus: status.abbrev, shortStatusColor: statusColors[1], fromattedNet, originalNet: net ,launchCrew:rocket?.spacecraft_stage,rocketConfig : rocket?.configuration}
     })
 
     response.nextlaunch = dataArray.splice(0, 1);
