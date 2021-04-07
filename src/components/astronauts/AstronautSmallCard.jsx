@@ -7,7 +7,7 @@ const AstronautSmallCard = ({ name, image, role }) => {
 
     const imageURL = image ? image : DefaultCrew;
     return (
-        <MDBCard className='cardBorderRadius greyColor'>
+        <MDBCard className='greyColor'>
             <MDBCardImage className={`${styles.cardImage}`} src={imageURL} alt={name} />
             <MDBCardBody>
                 <MDBCardText className='text-white d-flex flex-column'>

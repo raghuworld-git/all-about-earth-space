@@ -90,7 +90,7 @@ const Launch = () => {
               <MDBRow>
                 {launchCrew.map(({ astronaut, role }) => {
                   const { id, name, profile_image } = astronaut;
-                  return <MDBCol md='3' sm='12' xs='12' xl='3' className='mt-sm-2' key={id}>
+                  return <MDBCol md='3' sm='12' xs='12' xl='3' className='mt-2' key={id}>
                     <AstronautSmallCard name={name} image={profile_image} role={role?.role} />
                   </MDBCol>
                 })}
