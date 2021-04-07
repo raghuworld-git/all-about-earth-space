@@ -11,7 +11,7 @@ const LaunchImageCard = ({ name, finalImage }) => {
             <MDBCardImage
                 waves={false}
                 alt={name}
-                className={`${styles.imgfluid} ${styles.cardBorderRadius}`}
+                className={`${styles.imgfluid} cardBorderRadius`}
                 src={finalImage}
             />
         </MDBCard>

@@ -1,0 +1,5 @@
+.cardImage{
+    height: 280px !important;
+    width: 100%;
+    object-fit: contain;
+}

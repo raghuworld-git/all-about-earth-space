@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdbreact";
 import Loader from "../status/Loader";
 import { getLaunchBySlug } from "../../api/launchAPI";
-import { getFormattedTop5UpcomingList } from "../../utils/launchUtil";
+import { getFormattedLaunchDetails } from "../../utils/launchUtil";
 import DefaultImage from "../../assests/images/default.jpg";
 import LaunchImageCard from "../landingPage/nextLaunch/LaunchImageCard";
 import LaunchBasicInfoCard from "../landingPage/nextLaunch/LaunchBasicInfoCard";
 import TitleComponent from "../title/TitleComponent";
 import Description from "./Description";
+import AstronautSmallCard from "../astronauts/AstronautSmallCard";
 
 const Launch = () => {
   const { slug } = useParams();
@@ -23,7 +24,7 @@ const Launch = () => {
   if (status === "error") {
     return "An Error occured.. please try later";
   }
-  const { nextlaunch } = getFormattedTop5UpcomingList(data);
+  const { launchInfo } = getFormattedLaunchDetails(data);
 
   const {
     name,
@@ -36,10 +37,11 @@ const Launch = () => {
     statusFullColor,
     launchCrew,
     rocketConfig,
-  } = nextlaunch[0];
+  } = launchInfo[0];
 
   const finalImage = image ? image : DefaultImage;
   const { description: rocketDescription } = rocketConfig;
+  console.log(launchCrew)
 
   return (
     <>
@@ -76,6 +78,26 @@ const Launch = () => {
             <Description text={rocketDescription} title='Rocket description' />
           </MDBCol>
         </MDBRow>
+        {launchCrew &&
+          <MDBRow className='mt-3'>
+            <MDBCol size='12'>
+              <MDBTypography
+                tag="h5"
+                variant="h5-responsive"
+              >
+                Crew members
+            </MDBTypography>
+              <MDBRow>
+                {launchCrew.map(({ astronaut, role }) => {
+                  const { id, name, profile_image } = astronaut;
+                  return <MDBCol md='3' sm='12' xs='12' xl='3' className='mt-sm-2' key={id}>
+                    <AstronautSmallCard name={name} image={profile_image} role={role?.role} />
+                  </MDBCol>
+                })}
+              </MDBRow>
+            </MDBCol>
+          </MDBRow>
+        }
       </MDBContainer>
     </>
   );
