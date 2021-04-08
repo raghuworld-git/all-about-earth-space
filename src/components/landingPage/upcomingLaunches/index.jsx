@@ -48,7 +48,6 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
               <Link to={`/launch/${slug}`}>
                 <MDBCard
                   className={`greyColor my-1`}
-                  border="grey"
                   style={{
                     backgroundImage: `url('${imgUrl}')`,
                     backgroundRepeat: "no-repeat",

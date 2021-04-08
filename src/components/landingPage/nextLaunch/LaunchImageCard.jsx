@@ -6,7 +6,7 @@ const LaunchImageCard = ({ name, finalImage }) => {
     return (
         <MDBCard
             className='cardBorderRadius greyColor'
-            border="grey"
+
         >
             <MDBCardImage
                 waves={false}

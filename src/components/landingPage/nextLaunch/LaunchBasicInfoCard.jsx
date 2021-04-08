@@ -10,7 +10,6 @@ const LaunchBasicInfoCard = ({ name, originalNet, fromattedNet, statusFullColor,
     return (
         <MDBCard
             className='cardBorderRadius greyColor'
-            border="grey"
         >
             <MDBCardBody
                 className={`d-flex flex-column align-items-center justify-content-center ${styles.cardBody}`}

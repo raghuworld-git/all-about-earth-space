@@ -4,7 +4,7 @@ import { MDBCard, MDBCardBody, MDBTypography } from "mdbreact";
 
 const Description = ({ text, title }) => {
   return (
-    <MDBCard className="cardBorderRadius greyColor" border="grey">
+    <MDBCard className="cardBorderRadius greyColor">
       <MDBCardBody>
         {title ? (
           <MDBTypography
