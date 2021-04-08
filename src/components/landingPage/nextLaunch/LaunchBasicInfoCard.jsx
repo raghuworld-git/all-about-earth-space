@@ -38,7 +38,7 @@ const LaunchBasicInfoCard = ({ name, originalNet, fromattedNet, statusFullColor,
                     <span>
                         {media.map((item, index) => {
                             if (!item) return null;
-                            return <><URL key={index} type={item.type} url={item.url} />&nbsp;</>
+                            return <React.Fragment key={index}><URL type={item.type} url={item.url} />&nbsp;</React.Fragment>
                         })}
                     </span> : null
                 }
