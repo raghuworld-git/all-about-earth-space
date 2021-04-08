@@ -1,4 +1,5 @@
 import React from "react";
+import ReadLessMore from '../shared/readlessmore/ReadLessMore';
 import { MDBCard, MDBCardBody, MDBTypography } from "mdbreact";
 
 const Description = ({ text, title }) => {
@@ -14,7 +15,7 @@ const Description = ({ text, title }) => {
             {title}
           </MDBTypography>
         ) : null}
-        <p className="text-center">{text ? text : 'Data not available'}</p>
+        <p className="text-center">{text ? <ReadLessMore textVisibleSize='250' text={text} /> : 'Data not available'}</p>
       </MDBCardBody>
     </MDBCard>
   );

@@ -2,15 +2,16 @@ import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdbreact";
-import Loader from "../status/Loader";
+import Loader from "../shared/status/Loader";
 import { getLaunchBySlug } from "../../api/launchAPI";
 import { getFormattedLaunchDetails } from "../../utils/launchUtil";
 import DefaultImage from "../../assests/images/default.jpg";
 import LaunchImageCard from "../landingPage/nextLaunch/LaunchImageCard";
 import LaunchBasicInfoCard from "../landingPage/nextLaunch/LaunchBasicInfoCard";
-import TitleComponent from "../title/TitleComponent";
+import TitleComponent from "../shared/title/TitleComponent";
 import Description from "./Description";
 import AstronautSmallCard from "../astronauts/AstronautSmallCard";
+import YoutubeFrame from "../shared/youtubeFrame/YoutubeFrame";
 
 const Launch = () => {
   const { slug } = useParams();
@@ -36,12 +37,12 @@ const Launch = () => {
     statusFull,
     statusFullColor,
     launchCrew,
-    rocketConfig,
+    rocketInfo,
+    youtubeURL
   } = launchInfo[0];
 
   const finalImage = image ? image : DefaultImage;
-  const { description: rocketDescription } = rocketConfig;
-  console.log(launchCrew)
+  const { rocketDescription, rocketURL } = rocketInfo;
 
   return (
     <>
@@ -69,12 +70,26 @@ const Launch = () => {
               agency={agency}
               slug={slug}
               isManned={launchCrew ? true : false}
+              media={[rocketURL]}
               isDetail
             />
           </MDBCol>
         </MDBRow>
+        {youtubeURL &&
+          <MDBRow className='mt-3'>
+            <MDBCol md="12" sm="12" xs="12" xl="12">
+              <MDBTypography
+                tag="h5"
+                variant="h5-responsive"
+              >
+                Live Stream
+            </MDBTypography>
+              <YoutubeFrame width='100%' url={youtubeURL?.url} />
+            </MDBCol>
+          </MDBRow>
+        }
         <MDBRow className='mt-3'>
-          <MDBCol md="8" sm="12" xs="12" xl="8">
+          <MDBCol md="12" sm="12" xs="12" xl="12">
             <Description text={rocketDescription} title='Rocket description' />
           </MDBCol>
         </MDBRow>

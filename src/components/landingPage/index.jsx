@@ -7,8 +7,8 @@ import UpcomingLaunches from "./upcomingLaunches";
 
 import { getTopFiveUpcmomingLaunches } from "../../api/launchAPI";
 import { getFormattedTop5UpcomingList } from "../../utils/launchUtil";
-import Loader from "../status/Loader";
-import TitleComponent from '../title/TitleComponent';
+import Loader from "../shared/status/Loader";
+import TitleComponent from '../shared/title/TitleComponent';
 
 const LandingPage = () => {
   const { status, data } = useQuery(
@@ -25,7 +25,7 @@ const LandingPage = () => {
 
   const { nextlaunch, upcomingLaunch } = getFormattedTop5UpcomingList(data); //{ nextlaunch, upcomingLaunch }
 
-  //console.log(fordate)
+
 
   return (
     <>

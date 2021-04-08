@@ -1,0 +1,1 @@
+export const launchStatus = { completedStatus: ['success', 'failure', 'partial failure'], inProgressStatus: ['tbd', 'tbc', 'go', 'hold', 'in flight'] }
