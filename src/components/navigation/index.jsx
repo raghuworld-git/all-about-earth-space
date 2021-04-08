@@ -25,9 +25,9 @@ const HeaderNav = () => {
   return (
     <>
       <header>
-        <MDBNavbar style={{backgroundColor:'#313131'}} dark expand="md">
+        <MDBNavbar style={{ backgroundColor: '#313131' }} dark expand="md">
           <MDBNavbarBrand href="/">
-            <strong>AASE</strong>
+            <strong>Space Lift</strong>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={onClick} />
           <MDBCollapse isOpen={collapse} navbar>

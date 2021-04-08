@@ -20,7 +20,7 @@ export const getnextLaunch = async () => {
 
 export const getTopFiveUpcmomingLaunches = async () => {
     try {
-        const resp = await upcomingLaunchAPI.get(`/?limit=5`);
+        const resp = await upcomingLaunchAPI.get(`/?hide_recent_previous=true&limit=5`);
         return resp.data?.results;
     }
     catch (error) {
@@ -41,7 +41,7 @@ export const getLaunchBySlug = async (slug) => {
 export const getAllUpcomingLaunches = async (isCrewedLaunch) => {
     let isCrewedFilter = isCrewedLaunch ? '&is_crewed=true' : ''
     try {
-        const res = await upcomingLaunchAPI.get(`/?limit=9${isCrewedFilter}`);
+        const res = await upcomingLaunchAPI.get(`/?hide_recent_previous=true&limit=9${isCrewedFilter}`);
         return res.data.results
     }
     catch (error) {
