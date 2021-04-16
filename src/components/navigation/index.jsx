@@ -38,7 +38,7 @@ const HeaderNav = () => {
               <MDBNavItem>
                 <MDBDropdown>
                   <MDBDropdownToggle nav caret>
-                    <div className="d-none d-md-inline">Launches</div>
+                    <div className="d-md-inline">Launches</div>
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown-default">
                     <Link className="dropdown-item" to="/launches/upcoming">Upcoming</Link>
