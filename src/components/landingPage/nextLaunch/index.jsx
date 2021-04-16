@@ -6,8 +6,8 @@ import {
 
 import DefaultImage from "../../../assests/images/default.jpg";
 
-import LaunchImageCard from "./LaunchImageCard";
-import LaunchBasicInfoCard from "./LaunchBasicInfoCard";
+import LaunchImageCard from "../../shared/highlightLaunch/LaunchImageCard";
+import LaunchBasicInfoCard from "../../shared/highlightLaunch/LaunchBasicInfoCard";
 
 const Index = ({ launchInfo }) => {
   // const history = useHistory();

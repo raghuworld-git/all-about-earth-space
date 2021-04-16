@@ -1,32 +1,15 @@
 import React from "react";
 import {
-  MDBCard,
-  MDBCardBody,
-  MDBCol,
   MDBListGroupItem,
   MDBRow,
 } from "mdbreact";
 
-import styles from "./index.module.css";
-import { Link } from "react-router-dom";
+
 import defaultImage from "../../../assests/images/stars.jpg";
+import SmallLaunchCard from "../../shared/smallaunchCard/SmallLaunchCard";
 
 const UpcomingLaunches = ({ upcomingLaunchs }) => {
-  // const renderLaunches = upcomingLaunchs.length > 0 ? upcomingLaunchs.map(({ id, slug, name, fromattedNet, shortStatusColor, shortStatus }) => {
-  //     return <MDBListGroupItem key={id} hover className={`headerDarkColor ${styles.upcomingItem}`}>
-  //         <Link to={`/launch/${slug}`}>
-  //             <div className="d-flex w-100 justify-content-between">
-  //                 <h5 className="mb-1">{name}</h5>
-  //                 <b><span style={{ color: `${shortStatusColor}` }}>{shortStatus}</span></b>
-  //             </div>
-  //             <p className="mb-1">{fromattedNet}</p>
-  //         </Link>
-  //     </MDBListGroupItem>
-  // }) : <MDBListGroupItem hover className={`headerDarkColor ${styles.upcomingItem}`}>
-  //     <div className="text-center">
-  //         No upcoming launches. Stay tuned.
-  //     </div>
-  // </MDBListGroupItem >;
+
 
   const renderLaunches =
     upcomingLaunchs.length > 0 ? (
@@ -44,41 +27,14 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
 
           const imgUrl = image === null ? defaultImage : image;
           return (
-            <MDBCol key={id} sm="4" xs="12" md="4">
-              <Link to={`/launch/${slug}`}>
-                <MDBCard
-                  className={`greyColor my-1`}
-                  style={{
-                    backgroundImage: `url('${imgUrl}')`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                  }}
-                >
-                  <MDBCardBody
-                    className={`d-flex flex-column rgba-black-strong ${styles.upcomingCardBody}`}
-                  >
-                    <span className="d-inline-block text-truncate" title={name}>
-                      {name}
-                    </span>
-                    <span style={{ color: `${shortStatusColor}` }}>
-                      {shortStatus}
-                    </span>
-                    {fromattedNet}
-                    <small className='mt-1'>
-                      {agency}
-                    </small>
-                  </MDBCardBody>
-                </MDBCard>
-              </Link>
-            </MDBCol>
+            <SmallLaunchCard imgUrl={imgUrl} key={id} slug={slug} name={name} shortStatus={shortStatus} shortStatusColor={shortStatusColor} fromattedNet={fromattedNet} agency={agency} overlayDark />
           );
         }
       )
     ) : (
       <MDBListGroupItem
         hover
-        className={`headerDarkColor ${styles.upcomingItem}`}
+        className={`headerDarkColor`}
       >
         <div className="text-center">No upcoming launches. Stay tuned.</div>
       </MDBListGroupItem>

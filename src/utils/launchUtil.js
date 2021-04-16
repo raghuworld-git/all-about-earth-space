@@ -8,7 +8,7 @@ export const getColorByLaunchStatus = (launchStatusAbbr) => {
         case 'TBD':
         case 'TBC':
         case 'Hold':
-            return ['info', '#33b5e5']
+            return ['danger', 'red']
         case 'Go':
         case 'Success':
             return ['success', 'green']
@@ -57,13 +57,14 @@ export const getFormattedLaunchDetails = (data = []) => {
         const fromattedNet = `${month} ${day} ${year}, ${hour}:${minutes}:${seconds}`;
         const statusColors = getColorByLaunchStatus(status.abbrev);
         const rocketConfig = rocket?.configuration;
+
         return {
-            name, image, id, slug, location: pad.location?.name, agency: launch_service_provider.name, statusFull: `${status.name} (${status.abbrev})`, statusFullColor: statusColors[0], fromattedNet, originalNet: net, launchCrew: getFormattedCrews(rocket?.spacecraft_stage),
+            name, image, id, slug, location: pad.location?.name, agency: launch_service_provider.name, shortStatus: status.abbrev, shortStatusColor: statusColors[1], statusFull: `${status.name} (${status.abbrev})`, statusFullColor: statusColors[0], fromattedNet, originalNet: net, launchCrew: getFormattedCrews(rocket?.spacecraft_stage),
             rocketInfo: {
                 rocketDescription: rocketConfig?.description,
                 rocketURL: { type: urlType.link, url: rocketConfig?.info_url }
             },
-            youtubeURL: vidURLs.length > 0 ? {
+            youtubeURL: vidURLs?.length > 0 ? {
                 type: urlType.youtube, url: getYoutubeEmbedUrlByWatchURL(vidURLs[0]?.url)
             } : null
         }
