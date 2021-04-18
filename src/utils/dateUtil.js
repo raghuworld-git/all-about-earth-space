@@ -8,6 +8,10 @@ export const getCurrentBrowserTime = (timezone = null, passedDate = null) => {
 
 }
 
+export const getBrowserTimeZone = () => {
+    return Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).resolvedOptions().timeZone;
+}
+
 export const getFullFormattedDateTime = (dateTime, timezone = null) => {
     let fullDate = { month: null, year: null, day: null, hour: null, minutes: null, seconds: null };
 

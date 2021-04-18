@@ -27,7 +27,7 @@ const UpcomingLaunches = ({ upcomingLaunchs }) => {
 
           const imgUrl = image === null ? defaultImage : image;
           return (
-            <SmallLaunchCard imgUrl={imgUrl} key={id} slug={slug} name={name} shortStatus={shortStatus} shortStatusColor={shortStatusColor} fromattedNet={fromattedNet} agency={agency} overlayDark />
+            <SmallLaunchCard imgUrl={imgUrl} key={id} slug={slug} name={name} shortStatus={shortStatus} shortStatusColor={shortStatusColor} fromattedNet={fromattedNet} agency={agency} />
           );
         }
       )

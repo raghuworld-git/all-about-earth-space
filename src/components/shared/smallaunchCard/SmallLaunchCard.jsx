@@ -22,7 +22,7 @@ const SmallLaunchCard = ({ slug, imgUrl, name, shortStatusColor, shortStatus, fr
                         <span className="d-inline-block text-truncate" title={name}>
                             {name}
                         </span>
-                        <span style={{ color: `${shortStatusColor}` }}>
+                        <span style={{ color: `${shortStatusColor}`, fontWeight: 'bold' }}>
                             {shortStatus}
                         </span>
                         {fromattedNet}

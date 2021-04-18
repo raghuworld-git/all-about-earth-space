@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCurrentBrowserTime } from "../../utils/dateUtil";
+import { getCurrentBrowserTime, getBrowserTimeZone } from "../../utils/dateUtil";
 
 const CurrentBrowserTime = () => {
   const interval = 1000;
@@ -12,7 +12,7 @@ const CurrentBrowserTime = () => {
     return () => clearTimeout(timer);
   });
 
-  return <> {currentTime.month} {currentTime.day} {currentTime.year}, {currentTime.hour}:{currentTime.minute} {Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).resolvedOptions().timeZone} </>;
+  return <> {currentTime.month} {currentTime.day} {currentTime.year}, {currentTime.hour}:{currentTime.minute} {getBrowserTimeZone()} </>;
 };
 
 export default CurrentBrowserTime;
