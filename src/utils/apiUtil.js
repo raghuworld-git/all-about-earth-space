@@ -1,1 +1,1 @@
-export const baseSpacedevApiURL = 'https://lldev.thespacedevs.com/2.2.0';
+export const baseSpacedevApiURL = 'https://ll.thespacedevs.com/2.2.0';
